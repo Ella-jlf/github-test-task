@@ -21,8 +21,11 @@ android {
     }
 
     buildTypes {
-        release {
+        debug {
             minifyEnabled false
+        }
+        release {
+            minifyEnabled true
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
@@ -32,6 +35,9 @@ android {
     }
     kotlinOptions {
         jvmTarget = '1.8'
+    }
+    buildFeatures {
+        viewBinding true
     }
 }
 
@@ -82,5 +88,8 @@ dependencies {
     def timberVersion = "4.7.1"
     api "com.jakewharton.timber:timber:$timberVersion"
 
-
+    def rxJava = '3.1.2'
+    implementation "io.reactivex.rxjava3:rxjava:$rxJava"
+    def rxJavaAndroid = "3.0.0"
+    implementation "io.reactivex.rxjava3:rxandroid:$rxJavaAndroid"
 }

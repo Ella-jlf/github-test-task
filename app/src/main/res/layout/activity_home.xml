@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/DarkKhaki"
+    tools:context=".screen.home.HomeActivity">
+
+    <include
+        android:id="@+id/inclSearch"
+        layout="@layout/view_search" />
+
+    <include
+        android:id="@+id/inclRepos"
+        layout="@layout/view_repos" />
+
+</LinearLayout>
