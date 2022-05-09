@@ -6,8 +6,10 @@
         <entry key="..\:/android/github-test-task/app/src/main/res/drawable/ic_list.xml" value="0.2328125" />
         <entry key="..\:/android/github-test-task/app/src/main/res/layout/activity_home.xml" value="0.25" />
         <entry key="..\:/android/github-test-task/app/src/main/res/layout/item_repo.xml" value="0.5" />
+        <entry key="..\:/android/github-test-task/app/src/main/res/layout/view_filters.xml" value="0.46196403872752423" />
+        <entry key="..\:/android/github-test-task/app/src/main/res/layout/view_ops_error.xml" value="0.19519927536231885" />
         <entry key="..\:/android/github-test-task/app/src/main/res/layout/view_repos.xml" value="0.19519927536231885" />
-        <entry key="..\:/android/github-test-task/app/src/main/res/layout/view_search.xml" value="0.19519927536231885" />
+        <entry key="..\:/android/github-test-task/app/src/main/res/layout/view_search.xml" value="0.33" />
       </map>
     </option>
   </component>

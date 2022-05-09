@@ -6,4 +6,5 @@ import com.github.task.screen.base.BaseMvpView
 interface HomeView : BaseMvpView {
 
     fun setRepos(repos: List<RepoResponse>)
+    fun showErrorScreen()
 }

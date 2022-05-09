@@ -7,7 +7,8 @@ import com.github.task.R
 import com.github.task.net.response.RepoResponse
 import kotlin.math.abs
 
-class RepoAdapter : RecyclerView.Adapter<RepoViewHolder>() {
+class RepoAdapter(private val onImageClicked: (String) -> Unit) :
+    RecyclerView.Adapter<RepoViewHolder>() {
 
     var repos: List<RepoResponse> = listOf()
         set(value) {
@@ -26,7 +27,7 @@ class RepoAdapter : RecyclerView.Adapter<RepoViewHolder>() {
                 for (i in 0 until (oldSize - dif)) {
                     notifyItemChanged(i)
                 }
-                for (i in dif-1 downTo 0) {
+                for (i in dif - 1 downTo 0) {
                     notifyItemRemoved(i + oldSize - dif)
                 }
             }
@@ -38,7 +39,8 @@ class RepoAdapter : RecyclerView.Adapter<RepoViewHolder>() {
                 R.layout.item_repo,
                 parent,
                 false
-            )
+            ),
+            onImageClicked
         )
     }
 

@@ -4,16 +4,26 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
     android:background="@color/DarkKhaki"
+    android:orientation="vertical"
     tools:context=".screen.home.HomeActivity">
 
     <include
         android:id="@+id/inclSearch"
         layout="@layout/view_search" />
 
-    <include
-        android:id="@+id/inclRepos"
-        layout="@layout/view_repos" />
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <include
+            android:id="@+id/inclRepos"
+            layout="@layout/view_repos" />
+
+        <include
+            android:id="@+id/inclError"
+            layout="@layout/view_ops_error" />
+    </FrameLayout>
+
 
 </LinearLayout>

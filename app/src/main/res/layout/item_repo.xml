@@ -54,6 +54,8 @@
         android:layout_width="32dp"
         android:layout_height="32dp"
         android:layout_marginTop="12dp"
+        android:clickable="true"
+        android:focusable="true"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/vRepoWatchers" />
 

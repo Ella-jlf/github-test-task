@@ -8,7 +8,8 @@ import com.github.task.R
 import com.github.task.databinding.ItemRepoBinding
 import com.github.task.net.response.RepoResponse
 
-class RepoViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+class RepoViewHolder(itemView: View, private val onImageClicked: (String) -> Unit) :
+    RecyclerView.ViewHolder(itemView) {
     private val binding by viewBinding(ItemRepoBinding::bind)
 
     fun bind(repoInfo: RepoResponse) {
@@ -17,6 +18,10 @@ class RepoViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         binding.vRepoWatchers.text = repoInfo.countWatchers.toString()
         binding.vRepoIssues.text = repoInfo.countIssues.toString()
         binding.vRepoOwnerName.text = repoInfo.owner.name
+
+        binding.vRepoOwnerImage.setOnClickListener {
+            onImageClicked.invoke(repoInfo.owner.url)
+        }
 
         Glide
             .with(binding.vRepoOwnerImage)

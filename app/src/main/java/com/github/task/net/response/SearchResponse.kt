@@ -26,5 +26,18 @@ data class Owner(
     @SerializedName("avatar_url")
     val imageUrl: String = "",
     @SerializedName("login")
-    val name: String = ""
+    val name: String = "",
+    @SerializedName("html_url")
+    val url: String = ""
 )
+
+enum class SortType(val queryName: String) {
+    Stars("stars"),
+    Forks("forks"),
+    Updated("updated")
+}
+
+enum class OrderType(val queryName: String) {
+    Descending("desc"),
+    Ascending("asc")
+}

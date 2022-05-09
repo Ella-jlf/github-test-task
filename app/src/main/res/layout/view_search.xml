@@ -4,32 +4,91 @@
     android:layout_height="wrap_content"
     android:background="@color/TransparentBlack"
     android:gravity="center"
-    android:orientation="horizontal"
+    android:orientation="vertical"
     android:paddingHorizontal="20dp"
     android:paddingVertical="12dp">
 
-    <ImageView
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:src="@drawable/ic_list" />
+        android:orientation="horizontal">
 
-    <EditText
-        android:id="@+id/vSearchQuery"
-        style="@style/StandardText"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginHorizontal="24dp"
-        android:layout_weight="1"
-        android:imeOptions="actionDone"
-        android:lines="1"
-        android:textAlignment="textStart" />
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_list" />
 
-    <ImageView
-        android:id="@+id/vSearch"
-        android:layout_width="wrap_content"
+        <EditText
+            android:id="@+id/vSearchQuery"
+            style="@style/StandardText"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="24dp"
+            android:layout_weight="1"
+            android:imeOptions="actionDone"
+            android:lines="1"
+            android:textAlignment="textStart" />
+
+        <ImageView
+            android:id="@+id/vSearch"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="?android:selectableItemBackgroundBorderless"
+            android:clickable="true"
+            android:focusable="true"
+            android:src="@drawable/ic_search" />
+    </LinearLayout>
+
+    <RadioGroup
+        android:id="@+id/vgSortFilters"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="?android:selectableItemBackgroundBorderless"
-        android:clickable="true"
-        android:focusable="true"
-        android:src="@drawable/ic_search" />
+        android:checkedButton="@id/vRadioStars"
+        android:orientation="horizontal">
+
+        <RadioButton
+            android:id="@+id/vRadioStars"
+            style="@style/SmallInfoText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/issues" />
+
+        <RadioButton
+            android:id="@+id/vRadioForks"
+            style="@style/SmallInfoText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/forks" />
+
+        <RadioButton
+            android:id="@+id/vRadioUpdated"
+            style="@style/SmallInfoText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/updated" />
+    </RadioGroup>
+
+    <RadioGroup
+        android:id="@+id/vgOrderFilters"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:checkedButton="@id/vRadioDescending"
+        android:orientation="horizontal">
+
+        <RadioButton
+            android:id="@+id/vRadioDescending"
+            style="@style/SmallInfoText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/descending" />
+
+        <RadioButton
+            android:id="@+id/vRadioAscending"
+            style="@style/SmallInfoText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/ascending" />
+    </RadioGroup>
+
+
 </LinearLayout>

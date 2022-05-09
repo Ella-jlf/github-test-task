@@ -1,3 +1,12 @@
 <resources>
     <string name="app_name">github-test-task</string>
+    <string name="forks">forks</string>
+    <string name="stars">stars</string>
+    <string name="watchers">watchers</string>
+    <string name="ascending">ascending</string>
+    <string name="descending">descending</string>
+    <string name="issues">issues</string>
+    <string name="updated">updated</string>
+    <string name="error_too_many_repos">Ops... Seems like there too many repos, \n provide more concrete search</string>
+    <string name="error_not_found">Ops... Seems like there no repos was found</string>
 </resources>
