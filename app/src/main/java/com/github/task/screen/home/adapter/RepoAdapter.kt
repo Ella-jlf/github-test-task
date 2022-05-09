@@ -15,6 +15,8 @@ class RepoAdapter(
 
     var repos: List<RepoResponse> = listOf()
         set(value) {
+            //smooth replacement on all data changed
+
             val oldSize = field.size
             val dif = field.size - value.size
             field = value

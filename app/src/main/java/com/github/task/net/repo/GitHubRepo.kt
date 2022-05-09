@@ -8,10 +8,13 @@ import io.reactivex.rxjava3.core.Observable
 
 class GitHubRepo(private val gitHubService: GitHubService) {
 
+    private val baseCountPerPage = 50
+    private val firstPage = 1
+
     fun getRepos(
         query: String,
-        perPage: Int = 50,
-        page: Int = 1,
+        perPage: Int = baseCountPerPage,
+        page: Int = firstPage,
         sort: SortType = SortType.Updated,
         order: OrderType = OrderType.Descending
     ): Observable<SearchResponse> {

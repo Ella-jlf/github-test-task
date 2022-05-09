@@ -85,8 +85,9 @@ class HomeActivity : BaseMvpActivity(R.layout.activity_home), HomeView {
 
                 val lastVisible = layoutManager.findLastVisibleItemPosition()
                 val totalCount = layoutManager.itemCount
+                val itemPositionOnStartLoadingFromEnd = 3
 
-                if (lastVisible + 3 > totalCount) {
+                if (lastVisible + itemPositionOnStartLoadingFromEnd > totalCount) {
                     loadItems(totalCount)
                 }
             }
