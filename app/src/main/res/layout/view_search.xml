@@ -27,6 +27,7 @@
             android:layout_weight="1"
             android:imeOptions="actionDone"
             android:lines="1"
+            android:maxLines="1"
             android:textAlignment="textStart" />
 
         <ImageView

@@ -7,6 +7,11 @@
     <string name="descending">descending</string>
     <string name="issues">issues</string>
     <string name="updated">updated</string>
-    <string name="error_too_many_repos">Ops... Seems like there too many repos, \n provide more concrete search</string>
-    <string name="error_not_found">Ops... Seems like there no repos was found</string>
+    <string name="error_too_many_repos">Ops… Seems like there too many repos, \n provide more concrete search</string>
+    <string name="error_not_found">Ops… Seems like there no repos was found</string>
+    <string name="open_repo"><u>Open Repo</u></string>
+    <string name="open_profile"><u>Open Profile</u></string>
+    <string name="user_id">UserID: %s</string>
+    <string name="created_at">Created at: %s</string>
+    <string name="size">Size: %s</string>
 </resources>

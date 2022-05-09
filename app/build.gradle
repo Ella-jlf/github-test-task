@@ -92,4 +92,7 @@ dependencies {
     implementation "io.reactivex.rxjava3:rxjava:$rxJava"
     def rxJavaAndroid = "3.0.0"
     implementation "io.reactivex.rxjava3:rxandroid:$rxJavaAndroid"
+
+    def jodaTime = "2.10.14"
+    implementation "joda-time:joda-time:$jodaTime"
 }

@@ -19,7 +19,13 @@ data class RepoResponse(
     @SerializedName("owner")
     val owner: Owner = Owner(),
     @SerializedName("watchers_count")
-    val countWatchers: Int = 0
+    val countWatchers: Int = 0,
+    @SerializedName("created_at")
+    val date: String = "",
+    @SerializedName("size")
+    val size: Int = 0,
+    @SerializedName("html_url")
+    val url: String = ""
 )
 
 data class Owner(
@@ -28,7 +34,9 @@ data class Owner(
     @SerializedName("login")
     val name: String = "",
     @SerializedName("html_url")
-    val url: String = ""
+    val url: String = "",
+    @SerializedName("id")
+    val id: Int = 0
 )
 
 enum class SortType(val queryName: String) {

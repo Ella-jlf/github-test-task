@@ -8,7 +8,11 @@ import com.github.task.R
 import com.github.task.databinding.ItemRepoBinding
 import com.github.task.net.response.RepoResponse
 
-class RepoViewHolder(itemView: View, private val onImageClicked: (String) -> Unit) :
+class RepoViewHolder(
+    itemView: View,
+    private val onItemClicked: (RepoResponse) -> Unit,
+    private val onImageClicked: (String) -> Unit
+) :
     RecyclerView.ViewHolder(itemView) {
     private val binding by viewBinding(ItemRepoBinding::bind)
 
@@ -28,5 +32,9 @@ class RepoViewHolder(itemView: View, private val onImageClicked: (String) -> Uni
             .load(repoInfo.owner.imageUrl)
             .placeholder(R.drawable.img_default_avatar)
             .into(binding.vRepoOwnerImage)
+
+        binding.root.setOnClickListener {
+            onItemClicked.invoke(repoInfo)
+        }
     }
 }

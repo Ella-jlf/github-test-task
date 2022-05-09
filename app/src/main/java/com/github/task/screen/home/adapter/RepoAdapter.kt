@@ -7,7 +7,10 @@ import com.github.task.R
 import com.github.task.net.response.RepoResponse
 import kotlin.math.abs
 
-class RepoAdapter(private val onImageClicked: (String) -> Unit) :
+class RepoAdapter(
+    private val onItemClicked: (RepoResponse) -> Unit,
+    private val onImageClicked: (String) -> Unit
+) :
     RecyclerView.Adapter<RepoViewHolder>() {
 
     var repos: List<RepoResponse> = listOf()
@@ -40,6 +43,7 @@ class RepoAdapter(private val onImageClicked: (String) -> Unit) :
                 parent,
                 false
             ),
+            onItemClicked,
             onImageClicked
         )
     }

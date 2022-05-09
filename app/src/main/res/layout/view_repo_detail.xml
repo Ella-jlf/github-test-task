@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/DarkSalmon"
+    android:padding="24dp">
+
+    <ImageView
+        android:id="@+id/vRepoOwnerImage"
+        android:layout_width="128dp"
+        android:layout_height="128dp"
+        android:layout_margin="12dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <TextView
+        android:id="@+id/vRepoOwnerName"
+        style="@style/StandardText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/vRepoOwnerImage"
+        app:layout_constraintTop_toTopOf="@id/vRepoOwnerImage"
+        tools:text="Part of Megatron" />
+
+    <TextView
+        android:id="@+id/vRepoOwnerId"
+        style="@style/StandardText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/vRepoOwnerImage"
+        app:layout_constraintTop_toBottomOf="@id/vRepoOwnerName"
+        tools:text="UserID: " />
+
+    <TextView
+        android:id="@+id/vRepoOwnerReference"
+        style="@style/StandardText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:background="?android:selectableItemBackground"
+        android:clickable="true"
+        android:focusable="true"
+        android:text="@string/open_profile"
+        app:drawableStartCompat="@drawable/ic_reference"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/vRepoOwnerImage"
+        app:layout_constraintTop_toBottomOf="@id/vRepoOwnerId" />
+
+    <TextView
+        android:id="@+id/vRepoName"
+        style="@style/StandardText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:textSize="22sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/vRepoOwnerImage"
+        tools:text="MegaTron" />
+
+    <TextView
+        android:id="@+id/vRepoWatchers"
+        style="@style/SmallInfoText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:drawableStartCompat="@drawable/ic_watchers"
+        app:layout_constraintEnd_toStartOf="@id/vRepoForks"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/vRepoName"
+        tools:text="129" />
+
+    <TextView
+
+        android:id="@+id/vRepoForks"
+        style="@style/SmallInfoText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:drawableStartCompat="@drawable/ic_forks"
+        app:layout_constraintEnd_toStartOf="@id/vRepoIssues"
+        app:layout_constraintStart_toEndOf="@id/vRepoWatchers"
+        app:layout_constraintTop_toBottomOf="@id/vRepoName"
+        tools:text="12" />
+
+    <TextView
+        android:id="@+id/vRepoIssues"
+        style="@style/SmallInfoText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:drawableStartCompat="@drawable/ic_issues"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/vRepoForks"
+        app:layout_constraintTop_toBottomOf="@id/vRepoName"
+        tools:text="88" />
+
+    <TextView
+        android:id="@+id/vRepoCreated"
+        style="@style/StandardText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/vRepoWatchers"
+        tools:text="Created At : 20.24.2424" />
+
+    <TextView
+        android:id="@+id/vRepoSize"
+        style="@style/StandardText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/vRepoCreated"
+        tools:text="Size: 2342" />
+
+    <TextView
+        android:id="@+id/vRepoReference"
+        style="@style/StandardText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:background="?android:selectableItemBackground"
+        android:clickable="true"
+        android:focusable="true"
+        android:text="@string/open_repo"
+        app:drawableStartCompat="@drawable/ic_reference"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/vRepoSize" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
