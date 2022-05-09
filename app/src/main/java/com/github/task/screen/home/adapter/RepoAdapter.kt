@@ -36,6 +36,12 @@ class RepoAdapter(
             }
         }
 
+    fun loadRepos(newRepos: List<RepoResponse>) {
+        val allRepos = repos.toMutableList()
+        allRepos.addAll(newRepos)
+        repos = allRepos
+    }
+
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RepoViewHolder {
         return RepoViewHolder(
             LayoutInflater.from(parent.context).inflate(

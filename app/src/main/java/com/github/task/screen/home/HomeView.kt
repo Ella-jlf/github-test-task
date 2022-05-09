@@ -7,4 +7,5 @@ interface HomeView : BaseMvpView {
 
     fun setRepos(repos: List<RepoResponse>)
     fun showErrorScreen()
+    fun addRepos(repos: List<RepoResponse>)
 }

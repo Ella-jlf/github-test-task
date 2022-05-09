@@ -6,6 +6,8 @@ import android.net.Uri
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.widget.Toast
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import by.kirich1409.viewbindingdelegate.viewBinding
 import com.arellomobile.mvp.presenter.InjectPresenter
 import com.bumptech.glide.Glide
@@ -70,8 +72,30 @@ class HomeActivity : BaseMvpActivity(R.layout.activity_home), HomeView {
             }
 
             it.hideKeyboard()
+
             presenter.getRepos(query, sort, order)
         }
+
+        binding.inclRepos.root.addOnScrollListener(object : RecyclerView.OnScrollListener() {
+            override fun onScrolled(recyclerView: RecyclerView, dx: Int, dy: Int) {
+                super.onScrolled(recyclerView, dx, dy)
+
+                val layoutManager =
+                    binding.inclRepos.root.layoutManager as? LinearLayoutManager ?: return
+
+                val lastVisible = layoutManager.findLastVisibleItemPosition()
+                val totalCount = layoutManager.itemCount
+
+                if (lastVisible + 3 > totalCount) {
+                    loadItems(totalCount)
+                }
+            }
+        }
+        )
+    }
+
+    private fun loadItems(currentItemCount: Int) {
+        presenter.tryLoadMoreRepos(currentItemCount)
     }
 
     override fun setRepos(repos: List<RepoResponse>) {
@@ -92,6 +116,17 @@ class HomeActivity : BaseMvpActivity(R.layout.activity_home), HomeView {
         (binding.inclRepos.root.adapter as? RepoAdapter)?.repos = listOf()
     }
 
+    override fun addRepos(repos: List<RepoResponse>) {
+        binding.inclError.vErrorNotFound.gone()
+        binding.inclError.vErrorManyRepos.gone()
+
+        (binding.inclRepos.root.adapter as? RepoAdapter)?.loadRepos(repos)
+
+        if (repos.isEmpty()) {
+            binding.inclError.vErrorNotFound.visible()
+        }
+    }
+
     private fun openUrl(url: String) {
         try {
             startActivity(Intent(Intent.ACTION_VIEW, Uri.parse(url)))
@@ -108,7 +143,8 @@ class HomeActivity : BaseMvpActivity(R.layout.activity_home), HomeView {
         repoDetailsBinding.vRepoForks.text = repo.countForks.toString()
         repoDetailsBinding.vRepoIssues.text = repo.countIssues.toString()
         repoDetailsBinding.vRepoWatchers.text = repo.countWatchers.toString()
-        repoDetailsBinding.vRepoCreated.text = getString(R.string.created_at, repo.date.parseDateTimeToPrettyString())
+        repoDetailsBinding.vRepoCreated.text =
+            getString(R.string.created_at, repo.date.parseDateTimeToPrettyString())
         repoDetailsBinding.vRepoSize.text = getString(R.string.size, repo.size.toString())
         repoDetailsBinding.vRepoReference.setOnClickListener {
             openUrl(repo.url)
